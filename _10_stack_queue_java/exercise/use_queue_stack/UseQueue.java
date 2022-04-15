@@ -15,10 +15,9 @@ public class UseQueue {
             stack.push(arrString[i].toLowerCase());
             queue.offer(arrString[i].toLowerCase());
         }
-     boolean flag= true;
-        for (int i = 0; i <string.length() ; i++) {
-            if (stack.pop().equals(queue.poll())== false)
-            {
+        boolean flag = true;
+        for (int i = 0; i < string.length(); i++) {
+            if (!stack.pop().equals(queue.poll())) {
                 flag = false;
                 break;
             }
