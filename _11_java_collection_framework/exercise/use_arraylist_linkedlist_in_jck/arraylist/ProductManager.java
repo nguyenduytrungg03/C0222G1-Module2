@@ -15,6 +15,8 @@ public class ProductManager {
             System.out.println(item.toString());
         }
     }
+
+
     public static void add() {
         System.out.println("nhap ten: ");
         String name = sc.nextLine();
@@ -24,6 +26,8 @@ public class ProductManager {
         int id = Integer.parseInt(sc.nextLine());
         arrayList.add(new Product(name,price,id));
     }
+
+
     public static void delete(){
         System.out.println("nhap id muon xoa ");
         int id = Integer.parseInt(sc.nextLine());
@@ -33,6 +37,8 @@ public class ProductManager {
             }
         }
     }
+
+
     public  static  void edit(){
         System.out.println("Nhap id muon sua ");
         int id = Integer.parseInt(sc.nextLine());
@@ -47,6 +53,8 @@ public class ProductManager {
             }
         }
     }
+
+
     public static void find(){
         System.out.println("Nhap ten muon tim");
         String name = sc.nextLine();
@@ -58,6 +66,8 @@ public class ProductManager {
             }
         }
     }
+
+
     public static void sort(){
         Collections.sort(arrayList, new Comparator<Product>() {
             @Override
