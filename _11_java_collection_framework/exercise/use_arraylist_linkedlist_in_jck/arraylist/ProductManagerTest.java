@@ -2,14 +2,16 @@ package _11_java_collection_framework.exercise.use_arraylist_linkedlist_in_jck.a
 
 import java.util.Scanner;
 
-public class ProductManagerTest  {
+public class ProductManagerTest {
     public static void main(String[] args) {
         displayMenu();
+
     }
-    public static  void displayMenu(){
+
+    public static void displayMenu() {
         ProductManager productManager = new ProductManager();
         boolean check = true;
-        while (check){
+        while (check) {
             System.out.println("-----Menu-----");
             System.out.println("1.Them san pham");
             System.out.println("2.Sua san pham");
@@ -19,31 +21,29 @@ public class ProductManagerTest  {
             System.out.println("6.Sap xep lai san pham theo thu tu tang dan");
             System.out.println("7.Sap xep lai san pham theo thu tu giam dan");
             System.out.println("enter number: ");
-            Scanner scanner= new Scanner(System.in);
+            Scanner scanner = new Scanner(System.in);
 
-            switch (scanner.nextInt()){
+            switch (Integer.parseInt(scanner.nextLine())) {
                 case 1:
-                     ProductManager.add();
-                    System.out.println("them thanh cong");
+                    productManager.addProduct();
                     break;
                 case 2:
-                    ProductManager.edit();
+                   productManager.editId();
                     break;
                 case 3:
-                    ProductManager.delete();
-                    System.out.println("xoa thanh cong");
+                    productManager.deleteId();
                     break;
                 case 4:
                     ProductManager.display();
                     break;
                 case 5:
-                    ProductManager.find();
+                    productManager.findId();
                     break;
                 case 6:
-                    productManager.sort();
+                    productManager.sortAscending();
                     break;
                 case 7:
-                    productManager.sort1();
+                    productManager.sortDecrease();
                     break;
 
             }

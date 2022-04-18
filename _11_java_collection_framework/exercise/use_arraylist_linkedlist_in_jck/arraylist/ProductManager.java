@@ -7,80 +7,108 @@ import java.util.*;
 public class ProductManager {
     public static Scanner sc = new Scanner(System.in);
     public static List<Product> arrayList = new ArrayList<>();
-
-
+static {
+    Product product1= new Product("merinda",10000,1);
+    Product product2= new Product("merinda1",10000,2);
+    Product product3= new Product("merinda2",10000,3);
+    arrayList.add(product1);
+    arrayList.add(product2);
+    arrayList.add(product3);
+}
 
     public static void display() {
-        for (Product item: arrayList) {
+        for (Product item : arrayList) {
             System.out.println(item.toString());
         }
     }
 
 
-    public static void add() {
+    public void addProduct() {
         System.out.println("nhap ten: ");
         String name = sc.nextLine();
         System.out.println("nhap gia: ");
         int price = Integer.parseInt(sc.nextLine());
         System.out.println("nhap id: ");
         int id = Integer.parseInt(sc.nextLine());
-        arrayList.add(new Product(name,price,id));
+        arrayList.add(new Product(name, price, id));
+        System.out.println("them thanh cong");
     }
 
 
-    public static void delete(){
+
+    public void deleteId() {
         System.out.println("nhap id muon xoa ");
         int id = Integer.parseInt(sc.nextLine());
-        for (int i = 0; i <arrayList.size() ; i++) {
-            if (id==arrayList.get(i).getId()){
+        boolean flag = true;
+        for (int i = 0; i < arrayList.size(); i++) {
+            if (id == arrayList.get(i).getId()) {
                 arrayList.remove(i);
+                flag = false;
+                System.out.println("xoa thanh cong");
+                break;
             }
         }
+        if (flag) {
+            System.out.println("xoa khong thanh cong tim khong ra id");
+        }
+
     }
 
 
-    public  static  void edit(){
+    public void editId() {
         System.out.println("Nhap id muon sua ");
-        int id = Integer.parseInt(sc.nextLine());
-        for (int i = 0; i <arrayList.size() ; i++) {
-            if (id== arrayList.get(i).getId()){
+        int id = Integer.parseInt(sc.nextLine()); //3
+        boolean flag = true;
+
+        for (int i = 0; i < arrayList.size(); i++) {  //  1 2 3
+            if (id == arrayList.get(i).getId()) {
                 System.out.println("nhap ten muon sua ");
                 arrayList.get(i).setName(sc.nextLine());
                 System.out.println("nhap gia muon sua");
                 arrayList.get(i).setPrice(Integer.parseInt(sc.nextLine()));
-            }else{
-                System.out.println("nhap lai di be oi");
+                System.out.println("sua thanh cong");
+                flag = false;
+                break;
             }
+        }
+        if (flag) {
+            System.out.println("nhap lai");
         }
     }
 
 
-    public static void find(){
+    public void findId() {
         System.out.println("Nhap ten muon tim");
         String name = sc.nextLine();
-        for (Product item: arrayList) {
-            if (item.getName().equals(name)){
+        for (Product item : arrayList) {
+//            if (item.getName().equals(name)) {
+//                System.out.println(item);
+//            } else {
+//                System.out.println("tim lai ten di");
+//            }
+            if (item.getName().contains(name)){
                 System.out.println(item);
-            } else {
-                System.out.println("tim lai ten di");
             }
+
         }
     }
 
 
-    public static void sort(){
+    public void sortAscending() {
         Collections.sort(arrayList, new Comparator<Product>() {
             @Override
             public int compare(Product o1, Product o2) {
-                return o1.getPrice()-o2.getPrice();
+                return o1.getPrice() - o2.getPrice();
             }
         });
     }
-    public static void sort1(){
+
+
+    public void sortDecrease() {
         Collections.sort(arrayList, new Comparator<Product>() {
             @Override
             public int compare(Product o1, Product o2) {
-                return o2.getPrice()-o1.getPrice();
+                return o2.getPrice() - o1.getPrice();
             }
         });
     }

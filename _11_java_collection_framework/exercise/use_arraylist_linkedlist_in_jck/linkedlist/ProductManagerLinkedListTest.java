@@ -24,14 +24,12 @@ public class ProductManagerLinkedListTest  {
             switch (scanner.nextInt()){
                 case 1:
                     productManagerLinkedList.add();
-                    System.out.println("them thanh cong");
                     break;
                 case 2:
                     productManagerLinkedList.edit();
                     break;
                 case 3:
                     productManagerLinkedList.delete();
-                    System.out.println("xoa thanh cong");
                     break;
                 case 4:
                     productManagerLinkedList.display();
