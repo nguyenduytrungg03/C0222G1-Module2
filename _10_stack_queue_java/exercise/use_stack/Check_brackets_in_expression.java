@@ -3,7 +3,7 @@ package _10_stack_queue_java.exercise.use_stack;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class Demerging {
+public class Check_brackets_in_expression {
     public static void main(String[] args) {
 
             Scanner sc = new Scanner(System.in);

@@ -1,10 +1,11 @@
-package _10_stack_queue_java.exercise.use_queue_stack;
+package _10_stack_queue_java.exercise.use_queue;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
-public class UseQueue {
+public class Palindrome {
     public static void main(String[] args) {
         String string = "Able was I ere I saw Elbe";
         String[] arrString;

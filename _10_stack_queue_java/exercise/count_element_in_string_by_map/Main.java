@@ -10,22 +10,25 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Nhập chuỗi bất kì: ");
         String string = sc.nextLine().toLowerCase();
-        String[] newString = string.split(" "); //
+
+        String[] newString = string.split(" ");
+
         System.out.println(Arrays.toString(newString));
-        int count = 1;
+//        int count = 1;
+
         TreeMap<String, Integer> treeMap = new TreeMap<>();
 
         for (int i = 0; i < newString.length; i++) {
-                if (treeMap.containsKey(newString[i]))
-            {
+            if (treeMap.containsKey(newString[i])) {
                 treeMap.put(newString[i], treeMap.get(newString[i]) + 1);
+
             } else {
                 treeMap.put(newString[i], 1);
             }
         }
         System.out.println(treeMap);
     }
-    }
+}
 
 
 
