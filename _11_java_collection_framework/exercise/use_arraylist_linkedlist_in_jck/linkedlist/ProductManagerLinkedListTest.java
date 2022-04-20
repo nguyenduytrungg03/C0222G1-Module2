@@ -23,25 +23,25 @@ public class ProductManagerLinkedListTest  {
 
             switch (scanner.nextInt()){
                 case 1:
-                    productManagerLinkedList.add();
+                    productManagerLinkedList.addProduct();
                     break;
                 case 2:
-                    productManagerLinkedList.edit();
+                    productManagerLinkedList.editId();
                     break;
                 case 3:
-                    productManagerLinkedList.delete();
+                    productManagerLinkedList.deleteId();
                     break;
                 case 4:
                     productManagerLinkedList.display();
                     break;
                 case 5:
-                    productManagerLinkedList.find();
+                    productManagerLinkedList.findName();
                     break;
                 case 6:
-                    productManagerLinkedList.sort();
+                    productManagerLinkedList.sortAscending();
                     break;
                 case 7:
-                    productManagerLinkedList.sort2();
+                    productManagerLinkedList.sort2Decrease();
                     break;
             }
         }

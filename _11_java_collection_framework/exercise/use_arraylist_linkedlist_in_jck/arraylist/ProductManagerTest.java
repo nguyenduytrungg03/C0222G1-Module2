@@ -12,7 +12,7 @@ public class ProductManagerTest {
         ProductManager productManager = new ProductManager();
         boolean check = true;
         while (check) {
-            System.out.println("-----Menu-----");
+            System.out.println("---Menu---");
             System.out.println("1.Them san pham");
             System.out.println("2.Sua san pham");
             System.out.println("3.Xoa san pham");
