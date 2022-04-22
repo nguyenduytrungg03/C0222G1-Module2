@@ -1,9 +1,13 @@
 package _15_io_text_file.exercise.reader_file_csv;
 
-public class Country {
+import java.io.Serializable;
+
+public class Country implements Serializable {
+
     private int id;
     private String code;
     private String Name;
+
 
     public Country(int i) {
     }
@@ -12,6 +16,7 @@ public class Country {
         this.id = id;
         this.code = code;
         Name = name;
+
     }
 
     public int getId() {
