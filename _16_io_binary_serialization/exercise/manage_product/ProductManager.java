@@ -42,7 +42,7 @@ public class ProductManager implements Serializable {
         String descriptions = sc.nextLine();
         Product product = new Product(id, name, producer, price, descriptions);
         objectList.add(product);
-        ReaderAndWriteBinary.writeFileBinary("_16_io_binary_serialization/exercise/manage_product/product.txt", objectList);
+        ReaderAndWriteBinary.writeFileBinary(SOURCE_FILE, objectList);
         System.err.println("thêm thành công");
     }
 
