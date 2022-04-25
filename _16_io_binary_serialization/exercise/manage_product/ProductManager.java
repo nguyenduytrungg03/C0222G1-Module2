@@ -1,13 +1,16 @@
 package _16_io_binary_serialization.exercise.manage_product;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class ProductManager {
+public class ProductManager implements Serializable {
     public static Scanner sc = new Scanner(System.in);
     public static List<Product> objectList = new ArrayList<>();
+    static final String SOURCE_FILE = "_16_io_binary_serialization/exercise/manage_product/product.txt";
+
 
     static {
         Product product1 = new Product(1, "Iphone", "APPLE", 1000, "good");
@@ -19,13 +22,14 @@ public class ProductManager {
     }
 
     public void display() throws IOException {
-        objectList = (List<Product>) ReaderAndWriteBinary.readFileBinary("_16_io_binary_serialization/exercise/manage_product/product.txt");
+        objectList = (List<Product>) ReaderAndWriteBinary.readFileBinary(SOURCE_FILE);
         for (Product item : objectList) {
             System.out.println(item);
         }
     }
 
-    public void addNewProduct() {
+    public void addNewProduct() throws IOException {
+        objectList = (List<Product>) ReaderAndWriteBinary.readFileBinary(SOURCE_FILE);
         System.out.println("nhập id: ");
         int id = Integer.parseInt(sc.nextLine());
         System.out.println("nhập tên: ");
@@ -42,7 +46,8 @@ public class ProductManager {
         System.err.println("thêm thành công");
     }
 
-    public void findName() {
+    public void findName() throws IOException {
+        objectList = (List<Product>) ReaderAndWriteBinary.readFileBinary(SOURCE_FILE);
         System.out.println("Nhập tên muốn tìm: ");
         String name = sc.nextLine();
         boolean flag = true;
